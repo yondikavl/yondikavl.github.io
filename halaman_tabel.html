@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rekomendasi | Teracinema</title>
+
+    <link rel="stylesheet" href="/style/halaman_tabel.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div>
+          <img
+            src="/assets/images/logo-teracinema.svg"
+            alt="logo-teracinema"
+            width="24"
+          />
+          <h1><a href="/index.html">Teracinema</a></h1>
+        </div>
+        <div class="nav-menu">
+          <ul>
+            <li>
+              <a
+                href="/halaman_tabel.html"
+                style="color: black; font-weight: 700"
+                >Rekomendasi</a
+              >
+            </li>
+            <li>
+              <a href="/halaman_formulir.html">Masukan dan Saran</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="jumbotron">
+        <h1>Daftar Rekomendasi Film</h1>
+      </section>
+
+      <section class="daftar-film">
+        <table id="tabelFilm">
+          <thead>
+            <tr>
+              <th>Judul</th>
+              <th>Tahun Rilis</th>
+              <th>Genre</th>
+              <th>Durasi (menit)</th>
+              <th>Sutradara</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Joker</td>
+              <td>2019</td>
+              <td>Drama, Thriller</td>
+              <td>122</td>
+              <td>Todd Phillips</td>
+            </tr>
+            <tr>
+              <td>Parasite</td>
+              <td>2019</td>
+              <td>Drama, Thriller</td>
+              <td>132</td>
+              <td>Bong Joon-ho</td>
+            </tr>
+            <tr>
+              <td>Titanic</td>
+              <td>1997</td>
+              <td>Romance, Drama</td>
+              <td>195</td>
+              <td>James Cameron</td>
+            </tr>
+            <tr>
+              <td>Avatar</td>
+              <td>2009</td>
+              <td>Action, Adventure</td>
+              <td>162</td>
+              <td>James Cameron</td>
+            </tr>
+            <tr>
+              <td>The Dark Knight</td>
+              <td>2008</td>
+              <td>Action, Crime</td>
+              <td>152</td>
+              <td>Christopher Nolan</td>
+            </tr>
+            <tr>
+              <td>Inception</td>
+              <td>2010</td>
+              <td>Action, Sci-Fi</td>
+              <td>148</td>
+              <td>Christopher Nolan</td>
+            </tr>
+            <tr>
+              <td>The Shawshank Redemption</td>
+              <td>1994</td>
+              <td>Drama</td>
+              <td>142</td>
+              <td>Frank Darabont</td>
+            </tr>
+            <tr>
+              <td>Pulp Fiction</td>
+              <td>1994</td>
+              <td>Crime, Drama</td>
+              <td>154</td>
+              <td>Quentin Tarantino</td>
+            </tr>
+            <tr>
+              <td>Forrest Gump</td>
+              <td>1994</td>
+              <td>Drama, Romance</td>
+              <td>142</td>
+              <td>Robert Zemeckis</td>
+            </tr>
+            <tr>
+              <td>The Matrix</td>
+              <td>1999</td>
+              <td>Action, Sci-Fi</td>
+              <td>136</td>
+              <td>Wachowski Siblings</td>
+            </tr>
+            <tr>
+              <td>The Godfather</td>
+              <td>1972</td>
+              <td>Crime, Drama</td>
+              <td>175</td>
+              <td>Francis Ford Coppola</td>
+            </tr>
+            <tr>
+              <td>Schindler's List</td>
+              <td>1993</td>
+              <td>Biography, Drama</td>
+              <td>195</td>
+              <td>Steven Spielberg</td>
+            </tr>
+            <tr>
+              <td>Interstellar</td>
+              <td>2014</td>
+              <td>Adventure, Drama</td>
+              <td>169</td>
+              <td>Christopher Nolan</td>
+            </tr>
+            <tr>
+              <td>The Lord of the Rings: The Return of the King</td>
+              <td>2003</td>
+              <td>Action, Adventure</td>
+              <td>201</td>
+              <td>Peter Jackson</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+    <footer><p>&copy; 2023 Teracinema - Portal Sinema Terbaik</p></footer>
+
+    <script>
+      // Function to retrieve and display films
+      function tampilkanFilm() {
+        var films = JSON.parse(localStorage.getItem("films"));
+
+        if (films && films.length > 0) {
+          var table = document
+            .getElementById("tabelFilm")
+            .getElementsByTagName("tbody")[0];
+
+          for (var i = 0; i < films.length; i++) {
+            var film = films[i];
+            var newRow = table.insertRow(table.rows.length);
+            var cell1 = newRow.insertCell(0);
+            cell1.innerHTML = film.judul;
+            var cell2 = newRow.insertCell(1);
+            cell2.innerHTML = film.tahun;
+            var cell3 = newRow.insertCell(2);
+            cell3.innerHTML = film.genre;
+            var cell4 = newRow.insertCell(3);
+            cell4.innerHTML = film.durasi;
+            var cell5 = newRow.insertCell(4);
+            cell5.innerHTML = film.sutradara;
+          }
+        }
+      }
+
+      // Call the function when the page loads to display existing films
+      window.onload = tampilkanFilm;
+    </script>
+  </body>
+</html>

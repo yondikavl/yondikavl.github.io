@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Saran dan Masukan | Teracinema</title>
+
+    <link rel="stylesheet" href="/style/halaman_formulir.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div>
+          <img
+            src="/assets/images/logo-teracinema.svg"
+            alt="logo-teracinema"
+            width="24"
+          />
+          <h1><a href="/index.html">Teracinema</a></h1>
+        </div>
+        <div class="nav-menu">
+          <ul>
+            <li>
+              <a href="/halaman_tabel.html">Rekomendasi</a>
+            </li>
+            <li>
+              <a
+                href="/halaman_formulir.html"
+                style="color: black; font-weight: 700"
+                >Masukan dan Saran</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="jumbotron">
+        <h1>Saran dan Masukan Film</h1>
+      </section>
+      <form id="filmForm" method="GET" action="process_form.php">
+
+        <form id="filmForm">
+          <label for="judul">Judul:</label>
+          <input type="text" id="judul" name="judul" required />
+
+          <label for="tahun">Tahun Rilis:</label>
+          <input type="number" id="tahun" name="tahun" required />
+
+          <label for="genre">Genre:</label>
+          <input type="text" id="genre" name="genre" required />
+
+          <label for="durasi">Durasi (menit):</label>
+          <input type="number" id="durasi" name="durasi" required />
+
+          <label for="sutradara">Sutradara:</label>
+          <input type="text" id="sutradara" name="sutradara" required />
+
+          <input
+            type="button"
+            value="Tambahkan Film"
+            onclick="tambahkanFilm()"
+          />
+        </form>
+      </div>
+    </main>
+
+    <footer><p>&copy; 2023 Teracinema - Portal Sinema Terbaik</p></footer>
+
+    <script>
+      function tambahkanFilm() {
+        var judul = document.getElementById("judul").value;
+        var tahun = document.getElementById("tahun").value;
+        var genre = document.getElementById("genre").value;
+        var durasi = document.getElementById("durasi").value;
+        var sutradara = document.getElementById("sutradara").value;
+
+        // Create a JavaScript object to represent the film
+        var film = {
+          judul: judul,
+          tahun: tahun,
+          genre: genre,
+          durasi: durasi,
+          sutradara: sutradara,
+        };
+
+        // Get the existing films or initialize an empty array
+        var films = JSON.parse(localStorage.getItem("films")) || [];
+
+        // Add the new film to the array
+        films.push(film);
+
+        // Store the updated array back in localStorage
+        localStorage.setItem("films", JSON.stringify(films));
+
+        // Clear the form
+        document.getElementById("filmForm").reset();
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,275 @@
+* {
+  font-family: "Play", "sans-serif";
+}
+
+body {
+  margin: 0;
+  background-color: black;
+}
+
+header {
+  /* background-color: black; */
+  backdrop-filter: blur(10px);
+  padding: 12px 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 50px;
+  align-items: center;
+}
+
+header div {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+header div a {
+  text-decoration: none;
+  color: white;
+}
+
+/* 
+.nav-menu {
+  background-color: #7449e3;
+} */
+
+.nav-menu ul {
+  display: flex;
+  gap: 16px;
+  padding: 0;
+}
+
+.nav-menu li {
+  list-style: none;
+  padding: 12px 0;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: white;
+}
+
+.nav-menu a:hover {
+  color: black;
+}
+
+.jumbotron {
+  display: flex;
+  justify-content: center;
+  background: rgb(116, 73, 227);
+  background: radial-gradient(
+    circle,
+    rgba(116, 73, 227, 1) 0%,
+    rgba(47, 28, 97, 1) 100%
+  );
+  padding: 150px 300px 100px 300px;
+  flex-direction: column;
+}
+
+.jumbotron h1 {
+  color: white;
+  font-size: 60px;
+  text-align: center;
+}
+
+.jumbotron p {
+  color: white;
+  text-align: center;
+  font-size: 24px;
+}
+
+.featured-movies {
+  text-align: center;
+  margin-top: 40px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.featured-movies h2 {
+  font-size: 24px;
+}
+
+.title-featured {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.main-content {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  margin: 50px;
+}
+
+.main-content a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+}
+
+.main-content a:hover {
+  color: #7449e3;
+}
+
+.container {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 1em;
+  width: 1000px;
+  height: 400px;
+  transition: all 400ms;
+}
+
+.box {
+  position: relative;
+  background: #17141f center center;
+  background-size: cover;
+  transition: all 400ms;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+}
+
+.box::after {
+  content: attr(data-text);
+  position: absolute;
+  bottom: 20px;
+  background: #17141f;
+  color: white;
+  padding: 10px 10px 10px 14px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  transform: translateY(60px);
+  opacity: 0;
+  transition: all 400ms;
+}
+
+.container:hover .box {
+  filter: grayscale(100%) opacity(24%);
+}
+
+.box:hover::after {
+  transform: translateY(0);
+  opacity: 1;
+  transition-delay: 400ms;
+}
+
+.container .box:hover {
+  filter: grayscale(0%) opacity(100%);
+}
+
+.container:has(.box-1:hover) {
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+}
+
+.container:has(.box-2:hover) {
+  grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
+}
+
+.container:has(.box-3:hover) {
+  grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
+}
+
+.container:has(.box-4:hover) {
+  grid-template-columns: 1fr 1fr 1fr 2fr 1fr;
+}
+
+.container:has(.box-5:hover) {
+  grid-template-columns: 1fr 1fr 1fr 1fr 2fr;
+}
+
+.box:nth-child(odd) {
+  transform: translateY(-16px);
+}
+
+.box:nth-child(even) {
+  transform: translateY(16px);
+}
+
+.trailer-film-terbaru {
+  margin-top: 140px;
+  text-align: left;
+}
+
+.trailer-film-terbaru h2 {
+  color: white;
+  margin-bottom: 40px;
+  font-size: 24px;
+}
+
+.trailer-film-terbaru iframe {
+  border-radius: 16px;
+}
+
+aside {
+  background-color: #131313;
+  color: white;
+  padding: 20px;
+  border-radius: 16px;
+  margin: 20px 0;
+  margin-bottom: 0;
+  width: 20%;
+}
+
+aside h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #7449e3;
+}
+
+aside p {
+  font-size: 16px;
+  line-height: 1.4;
+  text-align: justify;
+}
+
+.nav-menu-aside ul {
+  display: flex;
+  gap: 16px;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.nav-menu-aside li {
+  list-style: none;
+  padding: 12px 0;
+}
+
+.nav-menu-aside a {
+  text-decoration: none;
+  color: rgb(147, 147, 147);
+}
+
+.nav-menu-aside a:hover {
+  color: #7449e3;
+}
+
+footer {
+  background: rgb(116, 73, 227);
+  background: radial-gradient(
+    circle,
+    rgba(116, 73, 227, 1) 0%,
+    rgba(47, 28, 97, 1) 100%
+  );
+  color: white;
+  text-align: center;
+  clear: both;
+  position: relative;
+  margin-top: 100px;
+  padding: 20px;
+}

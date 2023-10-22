@@ -1,0 +1,126 @@
+* {
+  font-family: "Play", "sans-serif";
+}
+
+body {
+  margin: 0;
+  background-color: black;
+}
+
+header {
+  /* background-color: black; */
+  backdrop-filter: blur(10px);
+  padding: 12px 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 50px;
+  align-items: center;
+}
+
+header div {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+header div a {
+  text-decoration: none;
+  color: white;
+}
+
+/* 
+  .nav-menu {
+    background-color: #7449e3;
+  } */
+
+.nav-menu ul {
+  display: flex;
+  gap: 16px;
+  padding: 0;
+}
+
+.nav-menu li {
+  list-style: none;
+  padding: 12px 0;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: white;
+}
+
+.nav-menu a:hover {
+  color: black;
+}
+
+.jumbotron {
+  display: flex;
+  justify-content: center;
+  background: rgb(116, 73, 227);
+  background: radial-gradient(
+    circle,
+    rgba(116, 73, 227, 1) 0%,
+    rgba(47, 28, 97, 1) 100%
+  );
+  padding: 100px;
+  flex-direction: column;
+}
+
+.jumbotron h1 {
+  color: white;
+  font-size: 40px;
+  text-align: center;
+}
+
+.daftar-film {
+  width: 80%;
+  margin: auto;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 50px 0;
+}
+
+th,
+td {
+  border: none;
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+  background-color: rgb(116, 73, 227);
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: rgb(215, 215, 215);
+}
+
+tr:nth-child(odd) {
+  background-color: white;
+}
+
+footer {
+  background: rgb(116, 73, 227);
+  background: radial-gradient(
+    circle,
+    rgba(116, 73, 227, 1) 0%,
+    rgba(47, 28, 97, 1) 100%
+  );
+  color: white;
+  text-align: center;
+  clear: both;
+  position: relative;
+  padding: 20px;
+}
